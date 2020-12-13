@@ -1,0 +1,443 @@
+/*Practica con sas y sus entendimientos,
+Sass es un copilador de CSS,*/
+p {
+  color: #fff;
+  margin: 1em;
+}
+
+a {
+  color: #fff;
+  margin-top: 1em;
+}
+
+span {
+  color: #fff;
+  margin-left: 1em;
+}
+
+/*Se pueden anidar elementos,Etiquetas o clases
+De manera simple y sencilla, Tambien podemos referenciar el padre.
+Con el simbolo And && */
+.elemento {
+  color: #333;
+}
+
+.elemento .elemento_Caja {
+  color: #113;
+}
+
+.mensaje {
+  border: 1px solid #aaa;
+  font-size: red;
+}
+
+.mensaje.error {
+  color: #fff;
+  background: red;
+}
+
+/*Anidacion con Metodoliga BEM,un Ejemplo Erronio y otro Correcto
+BEM Bloque__Elemnto--Modificador*/
+.autores {
+  display: table;
+}
+
+.autores--item {
+  display: table-cell;
+}
+
+/*@Media Query Recuerda poner All para que la media query
+Reconosca todo los navegadores*/
+div {
+  width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  div {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+/*Operaciones Numericos y aritmeticos con SASS
+Con variables, + , - , / , * ,  Sumas, Restas, Division y multiplicacion */
+.Ejemplo {
+  margin-bottom: 0em;
+}
+
+.Ejemplo2 {
+  margin-top: 50px;
+  margin-bottom: 50px -2;
+}
+
+/*Funciones DE colores Otorgado por SASS, Manipulacion del DOM HTML
+Con funciones de colores con clases unicas*/
+.CajasGrid {
+  width: 30%;
+  float: left;
+  height: 150px;
+  margin: 1.66%;
+  background: #cc988e;
+}
+
+.darken {
+  background: #a85b4c;
+}
+
+.ligthen {
+  background: #ecd8d4;
+}
+
+.saturate {
+  background: #e58775;
+}
+
+.desaturate {
+  background: #b3a9a7;
+}
+
+.rgba {
+  background: rgba(17, 17, 51, 0.5);
+}
+
+.invert {
+  background: black;
+}
+
+.complement {
+  background: white;
+}
+
+/*SASS y funciones con el @mixim, los mixin son trosos de codigo
+reutilizables, el mixin es igual que declarar una variable, la variable
+guarda un valor, mientras el mixin guarda todo trozo de codigo*/
+.Mixi__ejemplo {
+  border: 2px solid green;
+  border-radius: 10px;
+}
+
+/*Loops SASS, Bucles, @For y declaracion de la varible, el through
+cuenta todo del 1 al 20, pero el to del 1 al 19.Construir propiedades
+y Selectores con {}*/
+/*Definir valores especificos con @Each*/
+/*$sizes: Son objetos en SASS*/
+.small-5 {
+  width: 5%;
+}
+
+.small-10 {
+  width: 10%;
+}
+
+.small-15 {
+  width: 15%;
+}
+
+.small-20 {
+  width: 20%;
+}
+
+.small-25 {
+  width: 25%;
+}
+
+.small-30 {
+  width: 30%;
+}
+
+.small-35 {
+  width: 35%;
+}
+
+.small-40 {
+  width: 40%;
+}
+
+.small-45 {
+  width: 45%;
+}
+
+.small-50 {
+  width: 50%;
+}
+
+.small-55 {
+  width: 55%;
+}
+
+.small-60 {
+  width: 60%;
+}
+
+.small-65 {
+  width: 65%;
+}
+
+.small-70 {
+  width: 70%;
+}
+
+.small-75 {
+  width: 75%;
+}
+
+.small-80 {
+  width: 80%;
+}
+
+.small-85 {
+  width: 85%;
+}
+
+.small-90 {
+  width: 90%;
+}
+
+.small-95 {
+  width: 95%;
+}
+
+.small-100 {
+  width: 100%;
+}
+
+.mediun-5 {
+  width: 5%;
+}
+
+.mediun-10 {
+  width: 10%;
+}
+
+.mediun-15 {
+  width: 15%;
+}
+
+.mediun-20 {
+  width: 20%;
+}
+
+.mediun-25 {
+  width: 25%;
+}
+
+.mediun-30 {
+  width: 30%;
+}
+
+.mediun-35 {
+  width: 35%;
+}
+
+.mediun-40 {
+  width: 40%;
+}
+
+.mediun-45 {
+  width: 45%;
+}
+
+.mediun-50 {
+  width: 50%;
+}
+
+.mediun-55 {
+  width: 55%;
+}
+
+.mediun-60 {
+  width: 60%;
+}
+
+.mediun-65 {
+  width: 65%;
+}
+
+.mediun-70 {
+  width: 70%;
+}
+
+.mediun-75 {
+  width: 75%;
+}
+
+.mediun-80 {
+  width: 80%;
+}
+
+.mediun-85 {
+  width: 85%;
+}
+
+.mediun-90 {
+  width: 90%;
+}
+
+.mediun-95 {
+  width: 95%;
+}
+
+.mediun-100 {
+  width: 100%;
+}
+
+.large-5 {
+  width: 5%;
+}
+
+.large-10 {
+  width: 10%;
+}
+
+.large-15 {
+  width: 15%;
+}
+
+.large-20 {
+  width: 20%;
+}
+
+.large-25 {
+  width: 25%;
+}
+
+.large-30 {
+  width: 30%;
+}
+
+.large-35 {
+  width: 35%;
+}
+
+.large-40 {
+  width: 40%;
+}
+
+.large-45 {
+  width: 45%;
+}
+
+.large-50 {
+  width: 50%;
+}
+
+.large-55 {
+  width: 55%;
+}
+
+.large-60 {
+  width: 60%;
+}
+
+.large-65 {
+  width: 65%;
+}
+
+.large-70 {
+  width: 70%;
+}
+
+.large-75 {
+  width: 75%;
+}
+
+.large-80 {
+  width: 80%;
+}
+
+.large-85 {
+  width: 85%;
+}
+
+.large-90 {
+  width: 90%;
+}
+
+.large-95 {
+  width: 95%;
+}
+
+.large-100 {
+  width: 100%;
+}
+
+.x-large-5 {
+  width: 5%;
+}
+
+.x-large-10 {
+  width: 10%;
+}
+
+.x-large-15 {
+  width: 15%;
+}
+
+.x-large-20 {
+  width: 20%;
+}
+
+.x-large-25 {
+  width: 25%;
+}
+
+.x-large-30 {
+  width: 30%;
+}
+
+.x-large-35 {
+  width: 35%;
+}
+
+.x-large-40 {
+  width: 40%;
+}
+
+.x-large-45 {
+  width: 45%;
+}
+
+.x-large-50 {
+  width: 50%;
+}
+
+.x-large-55 {
+  width: 55%;
+}
+
+.x-large-60 {
+  width: 60%;
+}
+
+.x-large-65 {
+  width: 65%;
+}
+
+.x-large-70 {
+  width: 70%;
+}
+
+.x-large-75 {
+  width: 75%;
+}
+
+.x-large-80 {
+  width: 80%;
+}
+
+.x-large-85 {
+  width: 85%;
+}
+
+.x-large-90 {
+  width: 90%;
+}
+
+.x-large-95 {
+  width: 95%;
+}
+
+.x-large-100 {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

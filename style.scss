@@ -1,0 +1,202 @@
+/*Practica con sas y sus entendimientos,
+Sass es un copilador de CSS,*/
+
+
+
+//variables: Dato;
+$color: #fff;//puedes modificar #fe35c6 y el dato sera actualizado a todo lo que tenga la variable
+$margin: 1em;
+
+p
+{
+    color: $color;//Color: con la variable
+    margin: $margin;
+}
+a
+{
+    color: $color;
+    margin-top: $margin;
+}
+span
+{
+    color: $color;
+    margin-left: $margin ;
+}
+
+
+/*Se pueden anidar elementos,Etiquetas o clases
+De manera simple y sencilla, Tambien podemos referenciar el padre.
+Con el simbolo And && */
+
+
+//Anidar elementos hijos con el padre//
+
+.elemento//Elemento padre
+{
+    color: #333;
+
+    .elemento_Caja{//Elemento Hijo
+        color: #113
+
+    }
+}
+
+
+//Anidacion con referencias
+
+.mensaje
+{
+    border: 1px solid #aaa;
+    font-size: red;
+
+    &.error{//El And && tambien se lo puedes poner despues y
+        color: #fff;// .Error seria padre y .Mensaje Hijo
+        background: red;
+    }
+}
+
+/*Anidacion con Metodoliga BEM,un Ejemplo Erronio y otro Correcto
+BEM Bloque__Elemnto--Modificador*/
+
+.autores{ //El resultado seria .autores--item .autore && --item;
+    display: table;
+
+    &--item{
+        display: table-cell;
+    }
+}
+
+
+/*@Media Query Recuerda poner All para que la media query
+Reconosca todo los navegadores*/
+
+div
+{
+    width: 100%;
+
+    @media screen and (min-width:1025px){
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+/*Operaciones Numericos y aritmeticos con SASS
+Con variables, + , - , / , * ,  Sumas, Restas, Division y multiplicacion */
+
+
+$margin: 1em;
+
+.Ejemplo
+{
+    margin-bottom: $margin - 1; //Valor con variable
+}
+
+.Ejemplo2
+{
+    margin-top: (100px / 2);//Valores Fijos 
+    margin-bottom: 50px -2;
+}
+
+
+/*Funciones DE colores Otorgado por SASS, Manipulacion del DOM HTML
+Con funciones de colores con clases unicas*/
+
+//  .darken       Oscurese el color
+//  .ligthen      Aclara el color
+//  ,saturate     Satura el color
+//  .desaturate   Desatura el color
+//  .rgba         para Transparecnia
+//  .invert       Invierte el color 
+//  ,complement   Complementa el color
+
+$Color: #cc988e;
+
+.CajasGrid{
+    width: 30%;
+    float: left;
+    height: 150px;
+    margin: 1.66%;
+    background: $Color;
+}
+
+.darken{
+    background: darken($Color,20%);//Oscurese
+}
+
+.ligthen{
+    background: lighten($Color,20%);//Aclara
+}
+
+.saturate{
+    background: saturate($Color,30%);//Satura
+}
+.desaturate{
+    background: desaturate($Color,30%);//Desatura
+}
+.rgba{
+    background: rgba(#113,.5); //Sass no pide todo los datos en RGBA, tambien puedes usar el Exadecimal
+}
+
+.invert{
+    background: invert($color);//invierte el color,
+}
+
+.complement{
+    background: complement($color);//color Complementario, El complementario es el oopuesto del circulo cromatico
+}
+
+/*SASS y funciones con el @mixim, los mixin son trosos de codigo
+reutilizables, el mixin es igual que declarar una variable, la variable
+guarda un valor, mientras el mixin guarda todo trozo de codigo*/
+
+
+//Mixin su nombre
+            //Parametro 
+@mixin borde ($border-widht,$border-color,$border-radius){//(VAR);Datos de parametros
+    border: $border-widht solid $border-color; //$border-widht;2px $border-color;green
+    border-radius: $border-radius;//$border-radius: 10px
+}
+
+.Mixi__ejemplo{
+    //incluye el nombre del mixi, y llama los parametros con los datos
+    @include borde(2px,green,10px);// 1.$border-widht, 2.$border-color, $border-radius.
+}
+
+
+/*Loops SASS, Bucles, @For y declaracion de la varible, el through
+cuenta todo del 1 al 20, pero el to del 1 al 19.Construir propiedades
+y Selectores con {}*/
+
+//para cada $i inicia de y termina.
+//@for $i from 1 through 20 {
+//    .web-#{$i*5} { //interpolacion, Enumerando propiedades y Selectores #{Selectores}
+//        width: $i*5%;//multiplicando los valores 
+//    }
+//}
+
+/*Definir valores especificos con @Each*/
+
+
+/*$sizes: Son objetos en SASS*/
+
+
+$sizes: (
+    small: 400px,
+    mediun: 760px,
+    large: 1025px,
+    x-large: 14000px
+);
+
+// $size me toma el primer valor del mapa
+//$screen-size El tamaño del size me toma el segundo valor.
+//$sizes llama El objeto
+@each $size, $screen-sizes in $sizes {
+    @media all and (min-width: #{$screen-sizes}){
+    }
+    @for $i from 1 through 20 {
+            .#{$size}-#{$i*5} { //interpolacion, Enumerando propiedades y Selectores #{Selectores}
+                width: $i*5%;//multiplicando los valores 
+            }
+        }
+}
+
